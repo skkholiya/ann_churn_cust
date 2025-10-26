@@ -61,6 +61,8 @@ churn_probability = prediction[0][0]
 print("Churn Probability: ", scale_data,prediction)
 
 if churn_probability > 0.5:
-    st.write(f'The customer is likely to churn with a probability of: {churn_probability:.2f}')
+    churn_probability = churn_probability * 100
+    st.write(f'The customer is likely to churn with a probability of: {churn_probability:.2f}%')
 else:
-    st.write(f'The customer is unlikely to churn with a probability of: {churn_probability:.2f}')
+    churn_probability = churn_probability * 100
+    st.write(f'The customer is unlikely to churn with a probability of: {churn_probability:.2f}%')

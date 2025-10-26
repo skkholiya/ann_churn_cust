@@ -5,16 +5,16 @@ import tensorflow as tf
 import numpy as np
 from sklearn.preprocessing import OneHotEncoder, StandardScaler, LabelEncoder
 
-path_prefix = '/Users/sureshkholiya/Desktop/Code/pysnippet/dl/ann/'
-model = tf.keras.models.load_model(f'{path_prefix}models/model.h5')
 
-with open(f'{path_prefix}models/scaler.pkl', 'rb') as f:
+model = tf.keras.models.load_model(f'model.h5')
+
+with open(f'scaler.pkl', 'rb') as f:
     scaler = pickle.load(f)
 
-with open(f'{path_prefix}models/onehot_encoder.pkl', 'rb') as f:
+with open(f'onehot_encoder.pkl', 'rb') as f:
     geo_encoder = pickle.load(f)
 
-with open(f'{path_prefix}models/label_encoder.pkl', 'rb') as f:
+with open(f'label_encoder.pkl', 'rb') as f:
     label_encoder = pickle.load(f)
 
 st.title('Customer Churn Prediction')
